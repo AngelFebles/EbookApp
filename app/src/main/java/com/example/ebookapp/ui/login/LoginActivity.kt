@@ -16,6 +16,10 @@ import com.example.ebookapp.databinding.ActivityLoginBinding
 
 import com.example.ebookapp.R
 
+import android.content.Intent
+import com.example.ebookapp.HomeActivity
+
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
@@ -61,8 +65,8 @@ class LoginActivity : AppCompatActivity() {
             }
             setResult(Activity.RESULT_OK)
 
-            //Complete and destroy login activity once successful
-            finish()
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            startActivity(intent)
         })
 
         username.afterTextChanged {
@@ -94,6 +98,10 @@ class LoginActivity : AppCompatActivity() {
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
+
+                // Start HomeActivity
+                val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                startActivity(intent)
             }
         }
     }
