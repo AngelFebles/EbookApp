@@ -17,4 +17,3 @@ data class Book(
     val seriesNum: Int,
     val title: String
 )
-

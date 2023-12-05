@@ -17,6 +17,8 @@ import com.example.ebookapp.databinding.ActivityLoginBinding
 import com.example.ebookapp.R
 
 import android.content.Intent
+import android.widget.Button
+import com.example.ebookapp.CreateAccountActivity
 import com.example.ebookapp.HomeActivity
 
 
@@ -103,6 +105,7 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                 startActivity(intent)
             }
+
         }
     }
 
